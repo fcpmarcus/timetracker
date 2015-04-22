@@ -4,6 +4,11 @@ class ProjectsController < ApplicationController
 	end
 
 	def show
-		@project = Project.find(params[:id])
+		# @project = Project.find(params[:id])
+		if (params[:slug])
+			@project = Project.find_by slug: params[:slug]
+		else
+			@project = Project.find(params[:id])
+		end
 	end
 end

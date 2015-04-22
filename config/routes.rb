@@ -6,10 +6,11 @@ resources :companies
 resources :projects
 resources :works
 
-# give me recent work items within the past :days
+# get recent work items within the past :days
 get 'recentworks/:days' => 'works#index'
 
-
+# get slug route for projects
+get 'timetrackerproject/:slug' => 'projects#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
