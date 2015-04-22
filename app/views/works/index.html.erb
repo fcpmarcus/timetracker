@@ -4,9 +4,9 @@
 
 <ul>
 	<% @works.each do |w| %>
+	<li>Date Performed: <%= link_to w.datetimeperformed, w %></li>
 	<li>Project: <%= w.project.name %></li>
 	<li>User: <%= w.user.fname %> <%= w.user.lname %></li>
-	<li>Date Performed: <%= link_to w.datetimeperformed, w %></li>
 	<li>Hours: <%= w.hours %></li>
 	<br/>
 	<hr >

@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
 
+root 'companies#index'
+
 resources :companies
 resources :projects
 resources :works
+
+# give me recent work items within the past :days
+get 'recentworks/:days' => 'works#index'
 
 
 
