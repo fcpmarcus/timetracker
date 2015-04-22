@@ -2,13 +2,35 @@
 <html>
 <head>
   <title>Timetracker</title>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<div id="container">
+	<header>
+		<a id="logoTitle" href="/" ><img id="logo" src="/assets/time.png"> Time Tracker</a>
+		<nav>
+			<ul>
+				<% nav_items.each do |nav_item| %>
+					<%= display_nav_item(nav_item[:displaytext], nav_item[:controllername], nav_item[:linkurl]) %>
+				<% end %>
+			</ul>
+		</nav>
+	</header>
+	<section id="main">
+		<article>
+			<%= yield %>
+		</article>
+		<aside>
+			<%= yield :aside %>
+		</aside>
+	</section>
+	<footer>
+		<p>Time Tracker is a project written in Ruby on Rails </p>
+	</footer>
+</div>
 </body>
 </html>
