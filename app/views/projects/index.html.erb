@@ -1,0 +1,12 @@
+<h1>Projects: index</h1>
+
+<p>Here are all the projects:</p>
+
+<ul>
+	<% @projects.each do |p| %>
+	<li>Name: <%= link_to p.name, p %></li>
+	<li>Company: <%= p.company.name %></li>
+	<li>Default Rate: $<%= p.default_rate %></li>
+	<br />
+	<% end %>
+</ul>

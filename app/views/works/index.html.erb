@@ -1,0 +1,15 @@
+<h1>Works: index</h1>
+
+<p>Here are all the works: </p>
+
+<ul>
+	<% @works.each do |w| %>
+	<li>Project: <%= w.project.name %></li>
+	<li>User: <%= w.user.fname %> <%= w.user.lname %></li>
+	<li>Date Performed: <%= link_to w.datetimeperformed, w %></li>
+	<li>Hours: <%= w.hours %></li>
+	<br/>
+	<hr >
+	<br/>
+	<% end %>
+</ul>
