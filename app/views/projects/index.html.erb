@@ -1,12 +1,16 @@
 <h1>Projects</h1>
 
-<p>Here are all the projects:</p>
-
-<ul>
-	<% @projects.each do |p| %>
-	<li>Name: <%= link_to p.name, p %></li>
-	<li>Company: <%= p.company.name %></li>
-	<li>Default Rate: $<%= p.default_rate %></li>
-	<br />
-	<% end %>
-</ul>
+<table>
+	<tbody>
+		<tr>
+			<th>Project</th>
+			<th>Company</th>
+		</tr>
+		<% @projects.each do |project| %>
+		<tr>	
+			<td><%= link_to project.name, project %></td>
+			<td><%= link_to project.company.name, project.company %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
