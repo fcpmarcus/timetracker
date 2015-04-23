@@ -4,12 +4,9 @@
 	<tbody>
 		<tr>
 			<th>Project</th>
+			<th>Company</th>
 		</tr>
-		<% @company.projects.each do |project| %>
-		<tr>	
-			<td><%= link_to project, project %></td>
-		</tr>
-		<% end %>
+		<%= render partial: 'projects/project', collection: @company.projects %>
 	</tbody>
 </table>
 

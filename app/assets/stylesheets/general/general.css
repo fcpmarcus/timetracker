@@ -1,5 +1,4 @@
 body {
-	background: 				url('/assets/frenchstucco.png');
 	margin:						0;
 	padding:					0;
 	font-family: 				'Droid Serif', serif;
@@ -33,14 +32,17 @@ a:hover {
 	margin:						10px auto 20px auto;
 	border-radius: 				8px;
 	background-color: 			#fff;
-	border: 					2px solid black;
+	border: 					1px solid black;
+	box-shadow: 				1px 1px 7px #737373;
+	background: 				url('/assets/frenchstucco.png');
 }
 
 header {
-	background-color: 			#0B486B;
+	background-color: 			rgba(11, 72, 107, 0.75);
 	padding: 					2% 2%;
 	border-top-left-radius: 	5px;
 	border-top-right-radius: 	5px;
+	border-bottom: 				1px solid black;
 }
 
 #logo {
@@ -49,7 +51,7 @@ header {
 }
 #logoTitle {
 	font-size: 					60px;
-	color: 						#FFF;
+	color: 						#000;
 	text-decoration: 			none;
 }
 
@@ -88,7 +90,7 @@ header nav li a:hover, header nav li.active a {
 
 #main {
 	padding:					2%;
-	background-color: 			#fff;
+/*	background-color: 			#fff;*/
 }
 
 #main article {
@@ -133,14 +135,15 @@ header nav li a:hover, header nav li.active a {
 
 footer {
 	clear:						both;
-	background-color:			#0B486B;
+	background-color:			rgba(11, 72, 107, 0.75);
 	padding:					2%;
 	border-bottom-left-radius: 	5px;
 	border-bottom-right-radius: 5px;
+	border-top: 				1px solid black;
 }
 
 footer p {
-	color:						#FFF;
+	color:						#000;
 }
 
 @media only screen and (max-width: 699px) {
