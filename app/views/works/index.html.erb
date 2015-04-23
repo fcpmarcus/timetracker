@@ -1,9 +1,22 @@
 <h1>Works</h1>
 
-<ul>
-	<% @works.each do |w| %>
-	<li>Date Performed: <%= link_to w.datetimeperformed, w %></li>
-	<br/>
-	<hr >
-	<% end %>
-</ul>
+<table>
+	<tbody>
+		<tr>
+			<th></th>
+			<th>User</th>
+			<th>Project</th>
+			<th>Date/Time</th>
+			<th>Hours</th>
+		</tr>
+		<% @works.each do |work| %>
+		<tr>	
+			<td><%= link_to 'View', work %></td>
+			<td><%= work.user %></td>
+			<td><%= link_to work.project, work.project %></td>
+			<td><%= work.datetimeperformed.strftime('%m/%d/%Y %H:%M') %></td>
+			<td><%= work.hours %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

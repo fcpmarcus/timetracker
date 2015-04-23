@@ -21,4 +21,8 @@ class Work < ActiveRecord::Base
 			errors.add(:datetimeperformed, "can't be in the future")
 		end
 	end	
+
+	def to_s
+		"#{datetimeperformed.strftime('%m/%d/%Y %H:%M')}"
+	end
 end

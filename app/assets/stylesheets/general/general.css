@@ -105,7 +105,7 @@ header nav li a:hover, header nav li.active a {
 #main article table tr th {
 	background-color:			#0B486B;
 	color:						#fff;
-	text-align:					left;
+	text-align:					center;
 	font-weight: 				normal;
 	padding:					2px 15px;
 	border-right:				1px solid #3B8686;
@@ -114,6 +114,7 @@ header nav li a:hover, header nav li.active a {
 
 #main article table tr td {
 	padding:					2px 15px;
+	text-align: 				center;
 	border-right:				1px solid #3B8686;
 	border-bottom:				1px solid #3B8686;
 }
