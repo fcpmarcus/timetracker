@@ -1,29 +1,6 @@
 <h1>Edit Company</h1>
-<!-- if there are any errors, do the following -->
-<% if @company.errors.any? %>
-	<div id="errors">
-		<p>Please correct the following <%= pluralize(@company.errors.count, "error") %>:</p>
-		<ul>
-<!-- loop over errors and iterate with each loop, give error message to user -->
-			<% @company.errors.full_messages.each do |msg| %>
-			<li><%= msg %></li>
-			<% end %>
-		</ul>
-	</div>
-<% end %>
 
-
-
-<!-- form for object @company from new action -->
-<%= form_for(@company) do |f| %>
-	<div>
-		<%= f.label :name %>
-		<%= f.text_field :name %>
-	</div>
-	<div>
-		<%= f.submit "Update Company" %>
-	</div>
-<% end %>
+<%= render 'form' %>
 
 <% content_for :aside do %>
 	<%= render 'sidebar' %>
