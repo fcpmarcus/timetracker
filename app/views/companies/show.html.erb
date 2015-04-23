@@ -1,5 +1,7 @@
 <h1><%= @company.name %></h1>
 
+<p><%= link_to 'Edit Company', edit_company_path(@company) %></p>
+
 <% if @company.projects.size > 0 %>
 <table>
 	<tbody>

@@ -1,0 +1,37 @@
+<!-- if there are any errors, do the following -->
+<% if @work.errors.any? %>
+	<div id="errors">
+		<p>Please correct the following <%= pluralize(@work.errors.count, "error") %>:</p>
+		<ul>
+<!-- loop over errors and iterate with each loop, give error message to user -->
+			<% @work.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
+
+<!-- form for object @work from new action -->
+<%= form_for(@work) do |f| %>
+	<div>
+		<%= f.label :project_id %>
+		<%= f.collection_select(:project_id, Project.all, :id, :name, prompt: true) %>
+	</div>
+	<div>
+		<%= f.label :user_id %>
+		<%= f.collection_select(:user_id, User.all, :id, :to_s, prompt: true) %>
+	</div>
+	<div>
+		<%= f.label :datetimeperformed, 'Date/Time Performed' %>
+		<%= f.datetime_select :datetimeperformed %>
+	</div>
+	<div>
+		<%= f.label :hours %>
+<!-- object @work with hours field -->
+		<%= f.select(:hours, [1,2,3,4,5,6,7,8], prompt: true) %>
+	</div>
+	<div>
+		<%= f.submit @work.new_record? ? "Create work" : "Update Work" %>
+	</div>
+<% end %>

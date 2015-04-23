@@ -1,5 +1,7 @@
 <h1> <%= @work.datetimeperformed.strftime('%m/%d/%Y %H:%M') %></h1>
 
+<p><%= link_to 'Edit Work', edit_work_path(@work) %></p>
+
 <p><%= @work.project.name%></p>
 <p>User: <%= @work.user.fname%> <%= @work.user.lname%></p>
 <p>Hours: <%= @work.hours %></p>
