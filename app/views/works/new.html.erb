@@ -1,5 +1,19 @@
 <h1>New Work</h1>
 
+<!-- if there are any errors, do the following -->
+<% if @work.errors.any? %>
+	<div id="errors">
+		<p>Please correct the following <%= pluralize(@work.errors.count, "error") %>:</p>
+		<ul>
+<!-- loop over errors and iterate with each loop, give error message to user -->
+			<% @work.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
+
 <!-- form for object @work from new action -->
 <%= form_for(@work) do |f| %>
 	<div>

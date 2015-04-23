@@ -147,6 +147,10 @@ footer p {
 }
 
 @media only screen and (max-width: 699px) {
+	#logoTitle {
+		font-size: 30px;
+	}
+
 	h1 {
 		border-bottom:			none;
 	}

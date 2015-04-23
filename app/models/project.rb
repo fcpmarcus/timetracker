@@ -5,11 +5,13 @@ class Project < ActiveRecord::Base
 	has_many :users, :through => :works
 
 	validates :name, length: { minimum: 5 }
-	validates :company, presence: true
-	validates :default_rate, numericality: { only_integer: true, greater_than: 50, less_than: 10000 }
-
 	validates :slug, length: { minimum: 3 }
 	validates :slug, uniqueness: true
+	validates :default_rate, numericality: { only_integer: true, greater_than: 50, less_than: 10000 }
+	validates :company_id, presence: true
+	
+
+	
 
 	scope :lowdefaultrate, -> { where("default_rate < 100") }
 
