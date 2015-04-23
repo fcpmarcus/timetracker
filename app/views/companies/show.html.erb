@@ -1,3 +1,18 @@
 <h1><%= @company.name %></h1>
 
-<p><%= link_to 'All Companies', companies_path %></p>
+<table>
+	<tbody>
+		<tr>
+			<th>Project</th>
+		</tr>
+		<% @company.projects.each do |project| %>
+		<tr>	
+			<td><%= link_to project, project %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<% content_for :aside do %>
+	<% render 'sidebar' %>
+<% end %>
