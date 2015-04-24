@@ -1,5 +1,7 @@
 <h1><%= @project.name %></h1>
 
+<%= link_to 'Edit Project', edit_project_path %>
+
 <h3>Company: <%= @project.company.name %></h3>
 <p>Default rate: $<%= @project.default_rate %></p>
 <p>Slug: <%= @project.slug %></p>
