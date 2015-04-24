@@ -1,13 +1,13 @@
 div.flash {
-	padding: 	10px;
-	font-style: italic;
-	color:		#fff;
+	padding: 			10px;
+	font-style: 		italic;
+	color:				#fff;
 }
 
 div.notice {
-	background-color:	#3B8686;
+	background-color:	rgba(11, 72, 107, 0.75);
 }
 
 div.alert {
-	background-color: 	#d40000;
+	background-color: 	rgba(11, 72, 107, 0.75);
 }
