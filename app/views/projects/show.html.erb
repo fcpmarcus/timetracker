@@ -1,24 +1,29 @@
 <h1><%= @project.name %></h1>
 
-<%= link_to 'Edit Project', edit_project_path %>
-
 <h3>Company: <%= @project.company.name %></h3>
 <p>Default rate: $<%= @project.default_rate %></p>
 <p>Slug: <%= @project.slug %></p>
+<p><%= link_to 'Edit Project', edit_project_path %></p>
+
+<!-- render partial from work of works directory, and pass local variable -->
+<div class="remoteform">
+	<h2>Add Work</h2>
+	<%= render partial: 'works/form', locals: {doajax: true} %>
+</div>
 
 <% if @project.works.size > 0 %>
-<table>
-	<tbody>
-		<tr>
-			<th></th>
-			<th>User</th>
-			<th>Project</th>
-			<th>Date/Time</th>
-			<th>Hours</th>
-		</tr>
-		<%= render  partial: 'works/work', collection: @project.works %>
-	</tbody>
-</table>
+	<table>
+		<tbody>
+			<tr id="headerrow">
+				<th></th>
+				<th>User</th>
+				<th>Project</th>
+				<th>Date/Time</th>
+				<th>Hours</th>
+			</tr>
+			<%= render  partial: 'works/work', collection: @project.works %>
+		</tbody>
+	</table>
 <% else %>
 <p>No Projects</p>
 <% end %>

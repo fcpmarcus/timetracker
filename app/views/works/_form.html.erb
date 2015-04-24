@@ -11,9 +11,12 @@
 	</div>
 <% end %>
 
+<!-- set ajax call variable -->
+<% doajax = false unless (defined? doajax) %>
 
 <!-- form for object @work from new action -->
-<%= form_for(@work) do |f| %>
+<!-- keep using partial with ajax -->
+<%= form_for(@work, remote: doajax) do |f| %>
 	<div>
 		<%= f.label :project_id %>
 		<%= f.collection_select(:project_id, Project.all, :id, :name, prompt: true) %>
