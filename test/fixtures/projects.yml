@@ -9,9 +9,11 @@ projectxyz:
   company: clientinc
   default_rate: 60
   slug: project-xyz
+  user: marccruz
 
 secondproj:
   name: Second Project
   company: abcltd
   default_rate: 125
   slug: second-proj
+  user: marccruz

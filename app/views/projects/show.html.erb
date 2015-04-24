@@ -3,6 +3,7 @@
 <h3>Company: <%= @project.company.name %></h3>
 <p>Default rate: $<%= @project.default_rate %></p>
 <p>Slug: <%= @project.slug %></p>
+<p>Owner: <%= @project.user %></p>
 <p><%= link_to 'Edit Project', edit_project_path %></p>
 
 <!-- render partial from work of works directory, and pass local variable -->
