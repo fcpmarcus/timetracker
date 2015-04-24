@@ -34,6 +34,12 @@
 <!-- object @work with hours field -->
 		<%= f.select(:hours, [1,2,3,4,5,6,7,8], prompt: true) %>
 	</div>
+	<% if !doajax %>
+		<div>
+			<%= label_tag :doc, 'Notes (optional)' %>
+			<%= file_field_tag :doc %>
+		</div>
+	<% end %>
 	<div>
 		<%= f.submit @work.new_record? ? "Create work" : "Update Work" %>
 	</div>
